@@ -1,5 +1,8 @@
 'use strict'
 
+// C library API
+const ffi = require('ffi-napi');
+
 // Express App (Routes)
 const express = require("express");
 const app     = express();
