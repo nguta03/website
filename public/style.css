@@ -25,7 +25,7 @@ a:link:hover {
 }
 .navbar {
     margin-bottom: 20px;
-    
+    width: 100% !important;
 }
 .navbar .navbar-brand{
     color: black;
@@ -55,11 +55,6 @@ input[type=submit], button {
         font-size: 12px !important;
         width: 100% !important;
     }
-}
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-  text-align: center;
 }
 
 
