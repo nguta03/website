@@ -82,3 +82,7 @@ app.get('/endpoint1', function(req , res){
   );
 });
 */
+
+
+app.listen(portNum);
+console.log('Running app at localhost: ' + portNum);
