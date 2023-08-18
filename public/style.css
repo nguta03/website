@@ -1,5 +1,5 @@
 html {
-    width: 60%;
+    width: 100%;
     height: 100%;
     min-height: 100%;
     margin: 0 auto;
@@ -26,12 +26,6 @@ a:link:hover {
 .navbar {
     margin-bottom: 20px;
     width: 100% !important;
-}
-.navbar .navbar-brand{
-    color: black;
-}
-.navbar .navbar-text {
-    color: rgb(141, 15, 15);
 }
 
 input[type=submit], button {
