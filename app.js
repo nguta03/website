@@ -1,4 +1,6 @@
 'use strict'
+// Require http
+const http = require("http");
 
 // C library API
 const ffi = require('ffi-napi');
@@ -22,6 +24,10 @@ const portNum = process.argv[2];
 // Send HTML at root, do not change
 app.get('/',function(req,res){
   res.sendFile(path.join(__dirname+'/public/index.html'));
+});
+
+app.get('/worktermreport1',function(req,res){
+  res.sendFile(path.join(__dirname+'/public/worktermreport1.html'));
 });
 
 // Send Style, do not change

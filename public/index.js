@@ -18,41 +18,8 @@ jQuery(document).ready(function() {
             //    so we do not need to parse it on the server.
             //    JavaScript really does handle JSONs seamlessly
             
-            let table = document.getElementById("fileTable");
-            let dropdown = document.getElementById("files");
-            let dropdown2 = document.getElementById("files2");
-            if(data.gpxNum > 0){
-                table.deleteRow(1);
-                dropdown.remove(0);
-                dropdown2.remove(0);
-            }
-            let option = document.createElement("option");
-            option.value = option.text = "--Nothing selected--";
-            dropdown.add(option);
-            let option2 = document.createElement("option");
-            option2.value = option2.text = "--Nothing selected--";
-            dropdown2.add(option2);
-            for (var i = 0; i < data.gpxNum; i++) {
-                let row = table.insertRow(i+1);
-                let name = row.insertCell(0);
-                let version = row.insertCell(1);
-                let creator = row.insertCell(2);
-                let numWpt = row.insertCell(3);
-                let numRoute = row.insertCell(4);
-                let numTrack = row.insertCell(5);
-                name.innerHTML = '<a href=' + data.gpxName[i] + ' download >' + data.gpxName[i] + '</a>';
-                version.innerHTML = data.gpxVersion[i];
-                creator.innerHTML = data.gpxCreator[i];
-                numWpt.innerHTML = data.gpxNumWpt[i];
-                numRoute.innerHTML = data.gpxNumRte[i];
-                numTrack.innerHTML = data.gpxNumTrk[i];
-                let option = document.createElement("option");
-                option.value = option.text = data.gpxName[i];
-                dropdown.add(option);
-                let option2 = document.createElement("option");
-                option2.value = option2.text = data.gpxName[i];
-                dropdown2.add(option2);
-            }
+            //ex let table = document.getElementById("fileTable");
+            
             //We write the object to the console to show that the request was successful
             console.log(data); 
         },
