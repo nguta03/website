@@ -9,10 +9,9 @@ const ffi = require('ffi-napi');
 const express = require("express");
 const app     = express();
 const path    = require("path");
-const fileUpload = require('express-fileupload');
 
-app.use(fileUpload());
-app.use(express.static(path.join(__dirname+'/uploads')));
+app.use(express.static(path.join(__dirname+'/public')));
+app.use('/images', express.static('images'));
 
 // Minimization
 const fs = require('fs');
@@ -42,36 +41,6 @@ app.get('/index.js',function(req,res){
     const minimizedContents = JavaScriptObfuscator.obfuscate(contents, {compact: true, controlFlowFlattening: true});
     res.contentType('application/javascript');
     res.send(minimizedContents._obfuscatedCode);
-  });
-});
-
-//Respond to POST requests that upload files to uploads/ directory
-app.post('/upload', function(req, res) {
-  if(!req.files) {
-    return res.status(400).send('No files were uploaded.');
-  }
- 
-  let uploadFile = req.files.uploadFile;
- 
-  // Use the mv() method to place the file somewhere on your server
-  uploadFile.mv('uploads/' + uploadFile.name, function(err) {
-    if(err) {
-      return res.status(500).send(err);
-    }
-
-    res.redirect('/');
-  });
-});
-
-//Respond to GET requests for files in the uploads/ directory
-app.get('/uploads/:name', function(req , res){
-  fs.stat('uploads/' + req.params.name, function(err, stat) {
-    if(err == null) {
-      res.sendFile(path.join(__dirname+'/uploads/' + req.params.name));
-    } else {
-      console.log('Error in file downloading route: '+err);
-      res.send('');
-    }
   });
 });
 
