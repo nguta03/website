@@ -27,6 +27,21 @@ a:link:hover {
     width: 100% !important;
 }
 
+.sectionTitle{
+  font-weight: bold;
+  font-size: 36px;
+  font-style: italic;
+  width: 70%;
+  margin: auto;
+}
+
+.sectionBody{
+  font-size: 20px;
+  width: 70%;
+  margin: auto;
+}
+
+
 input[type=submit], button {
     cursor: pointer;
     cursor: hand;
