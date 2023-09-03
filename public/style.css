@@ -15,6 +15,12 @@ body {
     background-color: #FFFFFF;
     padding-bottom: 20px;
 }
+
+.mainBody {
+  width: 50%;
+  margin: auto;
+}
+
 a:link:hover {
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -31,16 +37,18 @@ a:link:hover {
   font-weight: bold;
   font-size: 36px;
   font-style: italic;
-  width: 70%;
+  
   margin: auto;
 }
 
 .sectionBody{
   font-size: 20px;
-  width: 70%;
   margin: auto;
 }
 
+.featureImage{
+  margin-top: 120px;
+}
 
 input[type=submit], button {
     cursor: pointer;
