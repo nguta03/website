@@ -1,9 +1,13 @@
 // Put all onload AJAX calls here, and event listeners
 
+$(document).ready(function(){
+	$('.header').height($(window).height());
+})
 
+
+/*
 jQuery(document).ready(function() {
     // On page-load AJAX Example
-    /*
     //need ajax call on page load to get files and populate table
     jQuery.ajax({
         type: 'get',            //Request type
@@ -40,5 +44,4 @@ jQuery(document).ready(function() {
             //Create an object for connecting to another waypoint
         });
     });
-    */
-});
+});*/
